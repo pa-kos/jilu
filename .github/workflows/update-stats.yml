@@ -5,7 +5,6 @@ on:
   schedule:
     # 每15分钟运行一次
     - cron: '0,15,30,45 * * * *'
-  # 删除 push 触发器，避免每次访问都运行
 
 jobs:
   update-stats:
@@ -15,21 +14,5 @@ jobs:
     - name: 检出代码
       uses: actions/checkout@v4
       
-    - name: 设置Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '18'
-        
-    - name: 安装依赖
-      run: npm install
-      
-    - name: 生成统计页面
-      run: node scripts/generate-stats.js
-      
-    - name: 提交更改
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .
-        git commit -m "自动更新统计页面 - $(date +'%Y/%m/%d %H:%M:%S')" || exit 0
-        git push
+    - name: 完成
+      run: echo "统计页面HTML是独立的，无需生成"
