@@ -1,0 +1,12 @@
+{
+  "name": "jilu-stats",
+  "version": "1.0.0",
+  "description": "页面访问统计系统",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["stats", "page-views"],
+  "author": "pa-kos",
+  "license": "MIT"
+}
